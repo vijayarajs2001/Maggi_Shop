@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <h1>🍜 Welcome To Maggi Freaks 🍽</h1>
+</head>
+
+<body>
+    <script>
+        function mainIngredient(l) {
+            if (l == "maggi") {
+                document.write("❗  Other vegetables are added.")
+            }
+            else {
+
+                g = l.slice(0, -5)
+                document.write(`❗  The main ingredient ${g} is added to the pan.`)
+            }
+        }
+        function PromiseFunction(input) {
+            return new Promise((resolve, reject) => {
+                if (input == "yes") {
+                    resolve()
+                }
+                else {
+                    reject()
+                }
+            })
+        }
+        alert("🍜 Welcome To Maggi Freaks 🍽")
+        async function input() {
+            await PromiseFunction(c, a)
+                .then(() => document.write("Your food ", a, " is ready 👍 to serve with extra spicy🌶️🌶️,"))
+                .catch(() => document.write("Your food ", a, " is ready 👍 to serve with normal spicy🌶️,"))
+            await PromiseFunction(b)
+                .then(() => document.write("extra cheese 🧀")),typeSauce(j)
+                .catch(() => document.write(" without cheese."))
+        }
+        function sauce(h) {
+            if (h == "yes") {
+                sauces = ["mayonnaise", "tomato sauce", "hot sauce", "barbecue sauce"]
+                j = prompt("Mayonnaise\nTomato Sauce\nHot Sauce\nBarbecue Sauce").toLowerCase()
+                if (sauces.includes(j)) {
+                    return j
+                } else {
+                    alert("enter the name correctly type sauce")
+                    sauce();
+                }
+            } else if (h == "no") {
+                j = "without any extra sauces"
+                return j
+            } else {
+                d = String(prompt("enter the name correctly 'YES'✅ or 'NO'❌"))
+                sauce(d)
+            }
+        }
+        function typeSauce(j) {
+            document.write(`, and ${j}`)
+        }
+        function orderFunction() {
+            menu_card = ["maggi", "vegetable maggi", "egg maggi", "mushroom maggi", "paneer maggi", "soupy maggi", "atta maggi"]
+            a = String(prompt("📝 MENU CARD :\n1.Maggi 🍜\n2.Vegetable Maggi 🥕🍜\n3.Egg Maggi 🥚🍜\n4.Mushroom Maggi 🍄🍜\n5.Paneer Maggi 🧀🍜\n6.Soupy Maggi 🍅🍜\n7.Atta Maggi 🌾🍜\nEnter the dish you would like to have :")).toLowerCase()
+            if (menu_card.includes(a)) {
+                if (a != "paneer maggi") {
+                    c = String(prompt("you want 'extra spicy' 🌶️🌶️ (type YES✅ or NO❌):")).toLowerCase()
+                    b = String(prompt("you want it 'with cheese' 🧀 (type YES✅ or NO❌) :")).toLowerCase()
+                    d = String(prompt("you want add to sauces 🍅 (type YES✅ or NO❌) ?")).toLowerCase()
+                    sauce(d);
+                    document.write("")
+                    setTimeout(() => {
+                        document.write("YOUR ORDER IS PLACED 😍")
+                        document.write("<br>")
+                        document.write("<br>")
+                        setTimeout(() => {
+                            document.write("Preparing.......⏳")
+                            document.write("<br>")
+                            setTimeout(() => {
+                                document.write("🍳 All the necessary ingredients butter, ginger-garlic paste, onion and tomatoes are fried.")
+                                document.write("<br>")
+                                setTimeout(() => {
+                                    mainIngredient(a)
+                                    document.write("<br>")
+                                    setTimeout(() => {
+                                        document.write("🍝 Maggi noodles is added with required amount of water.")
+                                        document.write("<br>")
+                                        setTimeout(() => {
+                                            document.write("🌶️ Seasoning is done with chilli powder, garam masala ,sauces and etc")
+                                            document.write("<br>")
+                                            setTimeout(() => {
+                                                document.write("⏱️ Wait for few minutes until the maggi get cooked")
+                                                document.write("<br>")
+                                                document.write("<br>")
+                                                setTimeout(() => {
+                                                    input()
+                                                    setTimeout(() => {
+                                                        document.write("<br>")
+                                                        document.write("<br>")
+                                                        document.write("THANK YOU VISIT US AGAIN 🙏....HAKUNAMATATA😁")
+                                                    }, 1000)
+                                                }, 1000)
+                                            }, 1000)
+                                        }, 1000)
+                                    }, 1000)
+                                }, 1000)
+                            }, 3000)
+                        }, 1000)
+                    }, 2000)
+                }
+                else {
+                    alert(`${a} is currently out of stock`)
+                    re_order = String(prompt("Would like to try new foods from menu (type YES✅ or NO❌)"))
+                    if (re_order == "yes") {
+                        orderFunction()
+                    }
+                    else {
+                        document.write("SORRY FOR THE INCONVENIENCE🙏...PLEASE VISIT US AGAIN")
+                    }
+                }
+            }
+            else {
+                alert("❌Enter the dish name correctly❌")
+                orderFunction()
+            }
+        }
+        function shopOpenOrClosePromiseFunction(open) {
+            return new Promise(function (resolve, reject) {
+                if (open) {
+                    resolve()
+                } else {
+                    reject()
+                }
+            })
+                .then(() => {
+                    orderFunction()
+                })
+                .catch((close) => {
+                    document.write("SORRY THE SHOP IS CLOSED 🙏 PLEASE VISIT US AGAIN")
+                })
+        }
+        shopOpenOrClosePromiseFunction(true)
+    </script>
+</body>
+
+</html>
